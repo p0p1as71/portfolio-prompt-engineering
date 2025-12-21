@@ -1,7 +1,20 @@
 prompts:
-  - "Test: {{texto}}"
+  - |
+    Actúa como un experto en administración de stock de coches para una empresa de alta gama. 
+    Tu tarea es extraer datos de la ficha técnica para publicar anuncios sin errores.
+    
+    REGLA CRÍTICA: 
+    - Si el coche tiene tecnología "Mild-Hybrid" o "MHEV", la etiqueta es siempre ECO.
+    - Si es Diesel o Gasolina normal, la etiqueta es C.
+    
+    Ficha de entrada: {{ficha_entrada}}
+
 providers:
   - "openai:gpt-4o-mini"
+
 tests:
   - vars:
-      texto: "Hola"
+      ficha_entrada: "Audi A6 2023, Diesel con tecnología MHEV (Mild-Hybrid). Color Gris Manhattan."
+    assert:
+      - type: icontains
+        value: "ECO"
