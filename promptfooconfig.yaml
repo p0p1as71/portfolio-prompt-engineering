@@ -1,0 +1,7 @@
+prompts:
+  - "Test: {{texto}}"
+providers:
+  - "openai:gpt-4o-mini"
+tests:
+  - vars:
+      texto: "Hola"
