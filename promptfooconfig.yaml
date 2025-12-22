@@ -1,27 +1,26 @@
 prompts:
   - |
-    Extrae los datos técnicos de esta ficha: {{ficha_entrada}}
-    Responde ÚNICAMENTE con un objeto JSON puro. Sin texto antes ni después.
-    
-    Estructura requerida:
-    {
-      "vehiculo": "string",
-      "motorizacion": "string",
-      "tecnologia": "string",
-      "etiqueta_dgt": "string"
-    }
+    Toma estos datos técnicos: {{datos_coche}}
+    Genera un anuncio EMOCIONAL para Instagram. 
+    Usa emojis y enfócate en el estilo de vida. Máximo 2 frases.
 
-    REGLAS DGT: MHEV=ECO, PHEV=CERO, Diesel/Gasolina convencional=C.
+  - |
+    Toma estos datos técnicos: {{datos_coche}}
+    Genera un anuncio TÉCNICO para portales especializados. 
+    Sin emojis, enfócate en la etiqueta DGT y datos mecánicos.
 
 providers:
   - id: openai:gpt-4o-mini
-    config:
-      response_format: { type: "json_object" }
 
 tests:
   - vars:
-      ficha_entrada: "Audi A6 2023, Diesel con tecnología MHEV (Mild-Hybrid). Color Gris Manhattan."
+      datos_coche: |
+        {
+          "vehiculo": "Porsche Panamera E-Hybrid",
+          "motorizacion": "PHEV",
+          "tecnologia": "Híbrido Enchufable",
+          "etiqueta_dgt": "CERO"
+        }
     assert:
-      - type: contains
-        value: '"etiqueta_dgt": "ECO"'
-      - type: is-json
+      - type: icontains
+        value: "CERO"
