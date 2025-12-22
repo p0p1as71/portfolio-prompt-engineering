@@ -1,0 +1,20 @@
+prompts:
+  - |
+    Extrae los datos técnicos de esta ficha: {{ficha_entrada}}
+    Responde ÚNICAMENTE con un objeto JSON puro.
+
+    REGLAS DGT: MHEV=ECO, PHEV=CERO, Diesel/Gasolina convencional=C.
+
+providers:
+  - id: openai:gpt-4o-mini
+    config:
+      # Este es el truco que aprendimos para que no de errores de formato
+      response_format: { type: "json_object" }
+
+tests:
+  - vars:
+      ficha_entrada: "Audi A6 2023, Diesel con tecnología MHEV (Mild-Hybrid)."
+    assert:
+      - type: is-json
+      - type: contains
+        value: '"etiqueta_dgt": "ECO"'
