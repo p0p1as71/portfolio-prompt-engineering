@@ -16,5 +16,17 @@ A continuación se muestra el resultado del test de validación donde el prompt 
 
 ![Resultado del Test](./resultado_test.png)
 
+## 🚀 Evolución: Extracción Estructurada (JSON Mode)
+El proyecto ha evolucionado de generar texto plano a producir datos estructurados listos para integración en sistemas ERP o bases de datos.
+
+### Mejoras implementadas:
+* **JSON Mode:** Forzado de respuesta mediante `response_format: { type: "json_object" }` para asegurar la integridad del formato.
+* **Validación Robusta:** Implementación de tests de contenido para verificar la lógica de etiquetas DGT (MHEV -> ECO).
+* **Eliminación de Ruido:** Limpieza de delimitadores Markdown para permitir el consumo directo de la salida.
+
+## ✅ Evidencia de éxito (Formato JSON)
+Aquí se observa cómo el sistema entrega un objeto limpio y validado:
+
+![Resultado Test JSON](./test_json_exitoso.png)
 ---
 *Proyecto desarrollado por Ricardo Rubio Albacete*
