@@ -10,7 +10,7 @@ prompts:
     Ficha de entrada: {{ficha_entrada}}
 
 providers:
-  - "google:models/gemini-1.5-flash"
+  - "openai:gpt-4o-mini"
 
 tests:
   - vars:
