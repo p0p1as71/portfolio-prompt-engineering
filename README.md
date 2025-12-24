@@ -24,18 +24,6 @@ El proyecto ha evolucionado de generar texto plano a producir datos estructurado
 * **Validación Robusta:** Implementación de tests de contenido para verificar la lógica de etiquetas DGT (MHEV -> ECO).
 * **Eliminación de Ruido:** Limpieza de delimitadores Markdown para permitir el consumo directo de la salida.
 
-## ✅ Evidencia de éxito (Formato JSON)
-Aquí se observa cómo el sistema entrega un objeto limpio y validado:
-
-![Resultado Test JSON](./test_json_exitoso.png)
-
----
-
-## 🎭 Módulo 2: Generación Multicanal (Emocional vs Técnico)
-En esta fase, el sistema utiliza datos estructurados en JSON para generar automáticamente dos variantes de copy publicitario:
-- **Instagram:** Tono emocional con enfoque en estilo de vida y emojis.
-- **Técnico:** Tono profesional enfocado en la etiqueta DGT y especificaciones.
-
 ![Resultado Test Porsche](./test_anuncios_porsche.png)
 
 *Proyecto desarrollado por Ricardo Rubio Albacete*
