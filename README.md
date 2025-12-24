@@ -24,6 +24,6 @@ El proyecto ha evolucionado de generar texto plano a producir datos estructurado
 * **Validación Robusta:** Implementación de tests de contenido para verificar la lógica de etiquetas DGT (MHEV -> ECO).
 * **Eliminación de Ruido:** Limpieza de delimitadores Markdown para permitir el consumo directo de la salida.
 
-![Resultado Test Porsche](./test_anuncios_porsche.png)
+![Resultado Test JSon](./test_json_exitoso.png)
 
 *Proyecto desarrollado por Ricardo Rubio Albacete*
